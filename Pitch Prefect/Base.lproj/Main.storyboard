@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D87p" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dsT-sh-VyA">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -39,7 +40,6 @@
                                 </state>
                                 <connections>
                                     <action selector="stopAudio:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="onj-Vp-4Oa"/>
-                                    <segue destination="tWG-qe-oNY" kind="show" id="a68-kn-DcR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -88,6 +88,7 @@
                         <outlet property="recordButton" destination="FSl-Bh-40B" id="HSr-yA-AAL"/>
                         <outlet property="recordingInProgress" destination="dFv-We-tSP" id="4Cw-L8-4CV"/>
                         <outlet property="stopButton" destination="eC4-PV-lvg" id="ycM-PP-a64"/>
+                        <segue destination="tWG-qe-oNY" kind="show" identifier="stopRecording" id="lWK-Ow-bLt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -150,12 +151,12 @@
                                 <exclude reference="1oY-CF-c2H"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="4x0-Sm-3TD"/>
-                                <exclude reference="vaA-Sh-PLA"/>
+                                <exclude reference="6Lf-QB-vrv"/>
+                                <exclude reference="MfZ-3T-lWb"/>
                                 <exclude reference="fnQ-dJ-XF1"/>
                                 <exclude reference="sJQ-M0-6h9"/>
-                                <exclude reference="MfZ-3T-lWb"/>
-                                <exclude reference="6Lf-QB-vrv"/>
+                                <exclude reference="4x0-Sm-3TD"/>
+                                <exclude reference="vaA-Sh-PLA"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -165,12 +166,12 @@
                                 <include reference="1oY-CF-c2H"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="4x0-Sm-3TD"/>
-                                <include reference="vaA-Sh-PLA"/>
+                                <include reference="6Lf-QB-vrv"/>
+                                <include reference="MfZ-3T-lWb"/>
                                 <include reference="fnQ-dJ-XF1"/>
                                 <include reference="sJQ-M0-6h9"/>
-                                <include reference="MfZ-3T-lWb"/>
-                                <include reference="6Lf-QB-vrv"/>
+                                <include reference="4x0-Sm-3TD"/>
+                                <include reference="vaA-Sh-PLA"/>
                             </mask>
                         </variation>
                     </view>
