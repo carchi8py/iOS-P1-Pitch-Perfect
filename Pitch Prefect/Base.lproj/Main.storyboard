@@ -22,34 +22,54 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="120" y="250" width="159" height="100"/>
+                                    <rect key="frame" x="149" y="250" width="100" height="100"/>
                                 </variation>
+                                <connections>
+                                    <action selector="recordAudio:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="wdE-5p-WIR"/>
+                                </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recording" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFv-We-tSP">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="14"/>
+                                <color key="textColor" red="0.1450980392" green="0.28235294119999998" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="dFv-We-tSP" secondAttribute="centerX" constant="-0.5" id="C8O-IW-B3f"/>
+                            <constraint firstItem="dFv-We-tSP" firstAttribute="top" secondItem="FSl-Bh-40B" secondAttribute="bottom" constant="13" id="Zk5-eB-3g9"/>
                             <constraint firstAttribute="centerX" secondItem="FSl-Bh-40B" secondAttribute="centerX" id="ppC-a3-DjO"/>
                             <constraint firstAttribute="centerY" secondItem="FSl-Bh-40B" secondAttribute="centerY" id="sPG-2F-p4P"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="FSl-Bh-40B"/>
+                                <exclude reference="dFv-We-tSP"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="ppC-a3-DjO"/>
                                 <exclude reference="sPG-2F-p4P"/>
+                                <exclude reference="C8O-IW-B3f"/>
+                                <exclude reference="Zk5-eB-3g9"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="FSl-Bh-40B"/>
+                                <include reference="dFv-We-tSP"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="ppC-a3-DjO"/>
                                 <include reference="sPG-2F-p4P"/>
+                                <include reference="C8O-IW-B3f"/>
+                                <include reference="Zk5-eB-3g9"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="recordingInProgress" destination="dFv-We-tSP" id="4Cw-L8-4CV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
