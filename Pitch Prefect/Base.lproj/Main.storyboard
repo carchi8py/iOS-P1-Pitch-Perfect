@@ -49,7 +49,7 @@
                             <constraint firstAttribute="centerX" secondItem="dFv-We-tSP" secondAttribute="centerX" constant="-0.5" id="C8O-IW-B3f"/>
                             <constraint firstAttribute="centerX" secondItem="eC4-PV-lvg" secondAttribute="centerX" id="Svz-ef-QYa"/>
                             <constraint firstItem="dFv-We-tSP" firstAttribute="top" secondItem="FSl-Bh-40B" secondAttribute="bottom" constant="13" id="Zk5-eB-3g9"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="eC4-PV-lvg" secondAttribute="bottom" constant="10" id="ns0-Rr-oU2"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="eC4-PV-lvg" secondAttribute="bottom" constant="40" id="ns0-Rr-oU2"/>
                             <constraint firstAttribute="centerX" secondItem="FSl-Bh-40B" secondAttribute="centerX" id="ppC-a3-DjO"/>
                             <constraint firstAttribute="centerY" secondItem="FSl-Bh-40B" secondAttribute="centerY" id="sPG-2F-p4P"/>
                         </constraints>
