@@ -34,11 +34,22 @@
                                 <color key="textColor" red="0.1450980392" green="0.28235294119999998" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eC4-PV-lvg">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="stop">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopAudio:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="onj-Vp-4Oa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="dFv-We-tSP" secondAttribute="centerX" constant="-0.5" id="C8O-IW-B3f"/>
+                            <constraint firstAttribute="centerX" secondItem="eC4-PV-lvg" secondAttribute="centerX" id="Svz-ef-QYa"/>
                             <constraint firstItem="dFv-We-tSP" firstAttribute="top" secondItem="FSl-Bh-40B" secondAttribute="bottom" constant="13" id="Zk5-eB-3g9"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="eC4-PV-lvg" secondAttribute="bottom" constant="10" id="ns0-Rr-oU2"/>
                             <constraint firstAttribute="centerX" secondItem="FSl-Bh-40B" secondAttribute="centerX" id="ppC-a3-DjO"/>
                             <constraint firstAttribute="centerY" secondItem="FSl-Bh-40B" secondAttribute="centerY" id="sPG-2F-p4P"/>
                         </constraints>
@@ -46,24 +57,30 @@
                             <mask key="subviews">
                                 <exclude reference="FSl-Bh-40B"/>
                                 <exclude reference="dFv-We-tSP"/>
+                                <exclude reference="eC4-PV-lvg"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="ppC-a3-DjO"/>
                                 <exclude reference="sPG-2F-p4P"/>
                                 <exclude reference="C8O-IW-B3f"/>
                                 <exclude reference="Zk5-eB-3g9"/>
+                                <exclude reference="Svz-ef-QYa"/>
+                                <exclude reference="ns0-Rr-oU2"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="FSl-Bh-40B"/>
                                 <include reference="dFv-We-tSP"/>
+                                <include reference="eC4-PV-lvg"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="ppC-a3-DjO"/>
                                 <include reference="sPG-2F-p4P"/>
                                 <include reference="C8O-IW-B3f"/>
                                 <include reference="Zk5-eB-3g9"/>
+                                <include reference="Svz-ef-QYa"/>
+                                <include reference="ns0-Rr-oU2"/>
                             </mask>
                         </variation>
                     </view>
@@ -77,5 +94,6 @@
     </scenes>
     <resources>
         <image name="microphone" width="100" height="100"/>
+        <image name="stop" width="50" height="50"/>
     </resources>
 </document>
