@@ -48,7 +48,7 @@
                             <constraint firstAttribute="centerX" secondItem="dFv-We-tSP" secondAttribute="centerX" constant="-0.5" id="C8O-IW-B3f"/>
                             <constraint firstAttribute="centerX" secondItem="eC4-PV-lvg" secondAttribute="centerX" id="Svz-ef-QYa"/>
                             <constraint firstItem="dFv-We-tSP" firstAttribute="top" secondItem="FSl-Bh-40B" secondAttribute="bottom" constant="13" id="Zk5-eB-3g9"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="eC4-PV-lvg" secondAttribute="bottom" constant="40" id="ns0-Rr-oU2"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="eC4-PV-lvg" secondAttribute="bottom" constant="50" id="ns0-Rr-oU2"/>
                             <constraint firstAttribute="centerX" secondItem="FSl-Bh-40B" secondAttribute="centerX" id="ppC-a3-DjO"/>
                             <constraint firstAttribute="centerY" secondItem="FSl-Bh-40B" secondAttribute="centerY" id="sPG-2F-p4P"/>
                         </constraints>
@@ -124,10 +124,21 @@
                                     <action selector="playFastAudio:" destination="tWG-qe-oNY" eventType="touchUpInside" id="Nr1-mS-C9a"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1oY-CF-c2H">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="stop">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopAudio:" destination="tWG-qe-oNY" eventType="touchUpInside" id="Itr-7O-lea"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="mHc-s0-KMb" firstAttribute="leading" secondItem="ecg-QG-Gtb" secondAttribute="leadingMargin" constant="50" id="4x0-Sm-3TD"/>
+                            <constraint firstItem="TfV-tb-aKF" firstAttribute="top" secondItem="1oY-CF-c2H" secondAttribute="bottom" constant="50" id="6Lf-QB-vrv"/>
+                            <constraint firstAttribute="centerX" secondItem="1oY-CF-c2H" secondAttribute="centerX" id="MfZ-3T-lWb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6f4-xH-2gT" secondAttribute="trailing" constant="50" id="fnQ-dJ-XF1"/>
                             <constraint firstItem="6f4-xH-2gT" firstAttribute="top" secondItem="1Ic-ba-Pl3" secondAttribute="bottom" constant="50" id="sJQ-M0-6h9"/>
                             <constraint firstItem="mHc-s0-KMb" firstAttribute="top" secondItem="1Ic-ba-Pl3" secondAttribute="bottom" constant="50" id="vaA-Sh-PLA"/>
@@ -136,24 +147,30 @@
                             <mask key="subviews">
                                 <exclude reference="mHc-s0-KMb"/>
                                 <exclude reference="6f4-xH-2gT"/>
+                                <exclude reference="1oY-CF-c2H"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="4x0-Sm-3TD"/>
                                 <exclude reference="vaA-Sh-PLA"/>
                                 <exclude reference="fnQ-dJ-XF1"/>
                                 <exclude reference="sJQ-M0-6h9"/>
+                                <exclude reference="MfZ-3T-lWb"/>
+                                <exclude reference="6Lf-QB-vrv"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="mHc-s0-KMb"/>
                                 <include reference="6f4-xH-2gT"/>
+                                <include reference="1oY-CF-c2H"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="4x0-Sm-3TD"/>
                                 <include reference="vaA-Sh-PLA"/>
                                 <include reference="fnQ-dJ-XF1"/>
                                 <include reference="sJQ-M0-6h9"/>
+                                <include reference="MfZ-3T-lWb"/>
+                                <include reference="6Lf-QB-vrv"/>
                             </mask>
                         </variation>
                     </view>
