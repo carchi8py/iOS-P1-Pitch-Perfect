@@ -21,9 +21,6 @@
                                 <state key="normal" image="microphone">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="149" y="250" width="100" height="100"/>
-                                </variation>
                                 <connections>
                                     <action selector="recordAudio:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="wdE-5p-WIR"/>
                                 </connections>
@@ -60,12 +57,12 @@
                                 <exclude reference="eC4-PV-lvg"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="ppC-a3-DjO"/>
-                                <exclude reference="sPG-2F-p4P"/>
+                                <exclude reference="ns0-Rr-oU2"/>
                                 <exclude reference="C8O-IW-B3f"/>
                                 <exclude reference="Zk5-eB-3g9"/>
+                                <exclude reference="ppC-a3-DjO"/>
+                                <exclude reference="sPG-2F-p4P"/>
                                 <exclude reference="Svz-ef-QYa"/>
-                                <exclude reference="ns0-Rr-oU2"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -75,17 +72,18 @@
                                 <include reference="eC4-PV-lvg"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="ppC-a3-DjO"/>
-                                <include reference="sPG-2F-p4P"/>
+                                <include reference="ns0-Rr-oU2"/>
                                 <include reference="C8O-IW-B3f"/>
                                 <include reference="Zk5-eB-3g9"/>
+                                <include reference="ppC-a3-DjO"/>
+                                <include reference="sPG-2F-p4P"/>
                                 <include reference="Svz-ef-QYa"/>
-                                <include reference="ns0-Rr-oU2"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="recordingInProgress" destination="dFv-We-tSP" id="4Cw-L8-4CV"/>
+                        <outlet property="stopButton" destination="eC4-PV-lvg" id="ycM-PP-a64"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
