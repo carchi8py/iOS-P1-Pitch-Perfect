@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D87p" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dsT-sh-VyA">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Record-->
@@ -105,25 +106,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mHc-s0-KMb">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mHc-s0-KMb">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" image="slow">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="37" y="104" width="46" height="30"/>
-                                </variation>
+                                <connections>
+                                    <action selector="playSlowAudio:" destination="tWG-qe-oNY" eventType="touchUpInside" id="yEg-Q4-Rln"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mHc-s0-KMb" firstAttribute="leading" secondItem="ecg-QG-Gtb" secondAttribute="leadingMargin" constant="50" id="4x0-Sm-3TD"/>
+                            <constraint firstItem="mHc-s0-KMb" firstAttribute="top" secondItem="1Ic-ba-Pl3" secondAttribute="bottom" constant="50" id="vaA-Sh-PLA"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="mHc-s0-KMb"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="4x0-Sm-3TD"/>
+                                <exclude reference="vaA-Sh-PLA"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="mHc-s0-KMb"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="4x0-Sm-3TD"/>
+                                <include reference="vaA-Sh-PLA"/>
                             </mask>
                         </variation>
                     </view>
@@ -153,6 +166,7 @@
     </scenes>
     <resources>
         <image name="microphone" width="100" height="100"/>
+        <image name="slow" width="100" height="100"/>
         <image name="stop" width="50" height="50"/>
     </resources>
 </document>
