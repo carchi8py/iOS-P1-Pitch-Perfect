@@ -36,7 +36,10 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         recordButton.enabled = true
         tapToRecord.hidden = false
     }
-
+    
+    /**
+    Records audio to be used by the app
+    */
     @IBAction func recordAudio(sender: UIButton) {
         tapToRecord.hidden = true
         stopButton.hidden = false
@@ -83,7 +86,10 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
             playSoundVC.receivedAudio = data
         }
     }
-
+    
+    /**
+    Stops Recording the Audio and move to the next screen
+    */
     @IBAction func stopAudio(sender: UIButton) {
         recordingInProgress.hidden = true
         audioRecorder.stop()

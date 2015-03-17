@@ -50,11 +50,21 @@ class PlaySoundsViewController: UIViewController {
     @IBAction func playVaderAudio(sender: UIButton) {
         playAudioWithVariablePitch(-1000)
     }
+    
+    /**
+    Stops the AudioPlayer and AudioEngine
+    Reset the Audio Engine
+    */
     @IBAction func stopAudio(sender: UIButton) {
-        audioPlayer.stop()
+        stopAndReset()
     }
     
+    /*
+    Plays a files back with Echo
+    */
     @IBAction func playEcho(sender: UIButton) {
+        //Since playAudioWithVariableSpeed(1) Does what we want for the first 
+        //audio playback no need to write any extra code for this
         playAudioWithVariableSpeed(1)
         
         let delay:NSTimeInterval = 0.3
@@ -66,17 +76,18 @@ class PlaySoundsViewController: UIViewController {
         audioPlayerForEcho.playAtTime(playtime)
         
     }
+    
+    /**
+    Plays the audio file back with Reverb
+    */
     @IBAction func playReverb(sender: UIButton) {
-        
-        audioPlayer.stop()
-        audioEngine.stop()
-        audioEngine.reset()
+        stopAndReset()
         
         var audioPlayerNode = AVAudioPlayerNode()
         audioEngine.attachNode(audioPlayerNode)
         
-        
         var reverbAudio = AVAudioUnitReverb()
+        //Set the type and how much Reverb we want in the audio file
         reverbAudio.loadFactoryPreset(AVAudioUnitReverbPreset.LargeChamber)
         reverbAudio.wetDryMix = 70
         
@@ -90,19 +101,23 @@ class PlaySoundsViewController: UIViewController {
         audioPlayerNode.play()
         
     }
+    
+    /** 
+    This functions plays an audio files back at a certain speed
+    :param: speed The speed we want to play the audio at
+    */
     func playAudioWithVariableSpeed(speed: Float){
-        audioPlayer.stop()
-        audioEngine.stop()
-        audioEngine.reset()
+        stopAndReset()
         audioPlayer.rate = speed
         audioPlayer.currentTime = 0.0
         audioPlayer.play()
     }
     
+    /** Plays the audio file at a specific pitch
+    :param: the pitch you want to play the audio file at
+    */
     func playAudioWithVariablePitch(pitch: Float){
-        audioPlayer.stop()
-        audioEngine.stop()
-        audioEngine.reset()
+        stopAndReset()
         
         var audioPlayerNode = AVAudioPlayerNode()
         audioEngine.attachNode(audioPlayerNode)
@@ -118,6 +133,16 @@ class PlaySoundsViewController: UIViewController {
         audioEngine.startAndReturnError(nil)
         
         audioPlayerNode.play()
+    }
+    
+    /**
+    This Stops and Reset the audioPlayer and Audio Endgine, we need to do this
+    Before every button push
+    */
+    func stopAndReset() {
+        audioPlayer.stop()
+        audioEngine.stop()
+        audioEngine.reset()
     }
     
     
