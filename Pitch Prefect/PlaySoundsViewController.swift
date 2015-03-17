@@ -12,6 +12,7 @@ import AVFoundation
 class PlaySoundsViewController: UIViewController {
 
     var audioPlayer:AVAudioPlayer!
+    var audioPlayerForEcho:AVAudioPlayer!
     var receivedAudio:RecordedAudio!
     var audioEngine: AVAudioEngine!
     var audioFile:AVAudioFile!
@@ -23,6 +24,8 @@ class PlaySoundsViewController: UIViewController {
         
         audioPlayer = AVAudioPlayer(contentsOfURL: receivedAudio.filePathUrl, error: nil)
         audioPlayer.enableRate = true
+        audioPlayerForEcho = AVAudioPlayer(contentsOfURL: receivedAudio.filePathUrl, error: nil)
+        audioPlayerForEcho.enableRate = true
         audioEngine = AVAudioEngine()
         audioFile = AVAudioFile(forReading: receivedAudio.filePathUrl, error: nil)
     }
@@ -53,6 +56,38 @@ class PlaySoundsViewController: UIViewController {
     
     @IBAction func playEcho(sender: UIButton) {
         playAudioWithVariableSpeed(1)
+        
+        let delay:NSTimeInterval = 0.3
+        var playtime:NSTimeInterval!
+        playtime = audioPlayerForEcho.deviceCurrentTime + delay
+        audioPlayerForEcho.stop()
+        audioPlayerForEcho.currentTime = 0
+        audioPlayerForEcho.volume = 0.4
+        audioPlayerForEcho.playAtTime(playtime)
+        
+    }
+    @IBAction func playReverb(sender: UIButton) {
+        
+        audioPlayer.stop()
+        audioEngine.stop()
+        audioEngine.reset()
+        
+        var audioPlayerNode = AVAudioPlayerNode()
+        audioEngine.attachNode(audioPlayerNode)
+        
+        
+        var reverbAudio = AVAudioUnitReverb()
+        reverbAudio.loadFactoryPreset(AVAudioUnitReverbPreset.LargeChamber)
+        reverbAudio.wetDryMix = 70
+        
+        audioEngine.attachNode(reverbAudio)
+        audioEngine.connect(audioPlayerNode, to: reverbAudio, format: nil)
+        audioEngine.connect(reverbAudio, to: audioEngine.outputNode, format: nil)
+        
+        audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
+        audioEngine.startAndReturnError(nil)
+        
+        audioPlayerNode.play()
         
     }
     func playAudioWithVariableSpeed(speed: Float){
